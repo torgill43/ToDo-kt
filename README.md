@@ -21,7 +21,8 @@
 {Make a list of websites that you found helpful in this project}
 
 - [Programiz](https://www.programiz.com/kotlin-programming)
-- [Web Site Name](http://url.link.goes.here)
+- [YouTube - Coding In Flow](https://www.youtube.com/@codinginflow)
+- [Stack Overflow](http://stackoverflow.com)
 
 # Future Work
 
