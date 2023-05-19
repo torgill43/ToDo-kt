@@ -2,42 +2,80 @@
  * Program: ToDo List
  * Author: Tim Orgill
  ******************/
+import java.util.Scanner
 
 fun main(args: Array<String>) {
     println("Hello world!")
+    val myList = mutableListOf("item")
 
-    val myList = mutableListOf("One", "Two", "Three")
+    val reader = Scanner(System.`in`)
+    var done = false
 
-    myList.add("Wacky")
+    while (!done) {
 
-//    for (item in myList) println("<> $item")
-    displayList(myList)
+        // Display menu of options for user to pick from
+        printMenu()
 
-    myList.remove("Wacky")
+        print("Enter your number: ")
+        var input = reader.nextInt()
 
-    displayList(myList)
+        when (input) {
+            1 -> addToList(myList)
+            2 -> println("Delete from List")
+            3 -> println("Update List")
+            4 -> displayList(myList)
+            5 -> {
+                done = true
+                println("Exiting program...")
+            }
+        }
+    }
 
-    addToList(myList, "Silly")
+//
+////    for (item in myList) println("<> $item")
+////    displayList(myList)
+//
+////    myList.remove("Wacky")
+//
+//    displayList(myList)
+//
+//    addToList(myList)
+//
+//    displayList(myList)
+//
+//    // removeFromList(myList, "Silly")
+//
+//    // for (i in 0..myList.lastIndex) println("<${i + 1}> ${myList[i]}")
+//
+//    updateList(myList, "Three", "Forty")
+//
+//    displayList(myList)
 
-    displayList(myList)
+}
 
-    // removeFromList(myList, "Silly")
+fun getMax(num1: Int, num2: Int) = if (num1 > num2) num1 else num2
 
-    // for (i in 0..myList.lastIndex) println("<${i + 1}> ${myList[i]}")
-
-    updateList(myList, "Three", "Forty")
-
-    displayList(myList)
+fun printMenu() {
+    println("\n<1> Add to List")
+    println("<2> Delete from List")
+    println("<3> Update List")
+    println("<4> Display List")
+    println("<5> Exit Program\n")
 
 }
 
 fun displayList(list: MutableList<String>) {
-    for (i in 0..list.lastIndex) println("<${i + 1}> ${list[i]}")
+    println("Your list:")
+    for (i in 0..list.lastIndex) println("\t[${i + 1}]1" +
+            " ${list[i]}")
     print("\n")
 }
 
-fun addToList(list: MutableList<String>, item: String): MutableList<String> {
-    list.add(item)
+fun addToList(list: MutableList<String>): MutableList<String> {
+    print("Add your item: ")
+    var input = readLine()
+
+    list.add(input.toString())
     return list
 }
 fun removeFromList(list: MutableList<String>, item: String): MutableList<String> {
