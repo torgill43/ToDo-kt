@@ -25,6 +25,7 @@ Language: Kotlin
 - [YouTube - Coding In Flow](https://www.youtube.com/@codinginflow)
 - [Stack Overflow](http://stackoverflow.com)
 - [ChatGPT](https://chat.openai.com/)
+  - Some documentation or tutorials were sparse for certain things, so this helped me specifically with reading and writing to files.
 
 # Future Work
 
